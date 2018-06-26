@@ -1,7 +1,7 @@
 package com.beiyan.shop.controller;
 
 import com.beiyan.shop.config.JwtTokenUtil;
-import com.beiyan.shop.domain.AuthToken;
+import com.beiyan.shop.domain.AuthTokenVO;
 import com.beiyan.shop.domain.LoginUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -39,7 +39,7 @@ public class AuthenticationController {
 
         //generate token
         final String token = jwtTokenUtil.generateToken(loginUser.getUsername());
-        return ResponseEntity.ok(new AuthToken(token));
+        return ResponseEntity.ok(new AuthTokenVO(token));
     }
 
 }
